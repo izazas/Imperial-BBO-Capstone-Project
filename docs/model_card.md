@@ -17,6 +17,7 @@
 
 ## Intended Use
 <p align="justify">
+
 The dataset and model are primarily intended for **educational purposes** in the field of global optimisation of continuous, black-box objective functions limited by a finite evaluation budget.
 </p>
 
