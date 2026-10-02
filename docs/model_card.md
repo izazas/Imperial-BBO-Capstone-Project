@@ -131,6 +131,7 @@ Performance is evaluated using the **highest unnormalized observed output value*
 </div>
 
 ### Ethical Considerations
+
 <div style="text-align: justify;">
 
 - **Data Privacy & Bias:** The datasets consist exclusively of synthetic numerical data from black-box objective functions without personal, demographic, sensitive, or human-subject information. Algorithmic bias and privacy concerns are not directly applicable.
