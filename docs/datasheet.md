@@ -16,10 +16,9 @@ The purpose of this dataset is to study and evaluate the performance of differen
 <p align="justify">
 The dataset contains numerical input values provided to the optimisation algorithm(s) and their corresponding output values, obtained by evaluating the actual objective functions. Detailed information about the initial dataset provided for each of the eight black-box objective functions is presented in **Table 1** below.
 </p>
-<p align="centre">
 
 ### Table 1: Initial Dataset
-</p>
+
 | Function | Initial Input Data Dimensions (# evaluations × # features) | Initial Output Data Dimensions (# evaluations) | Input and Output Data Type | Input Space Range | Output Space Range | Format |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | 1 | 10 × 2 | 10 | Real numeric | [0, 1] | Varying | Floating with 6 digits of precision |
