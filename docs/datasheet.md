@@ -51,11 +51,11 @@ Different transformations were applied to the output/target variables of each of
 |---:|---|
 | 1 | Rank/Copula |
 | 2 | z-score standardisation |
-| 3 | — |
+| 3 |  $$ \hat{y}=-log(-y)$$ |
 | 4 | z-score standardisation |
-| 5 | — |
+| 5 | $$ \hat{y}=log(y)$$ |
 | 6 | z-score standardisation |
-| 7 | — |
+| 7 | $$ \hat{y}=log(y)$$ |
 | 8 | z-score standardisation |
 
 ### Intended Use of the Datasets
