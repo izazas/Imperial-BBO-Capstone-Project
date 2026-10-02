@@ -17,8 +17,7 @@
 
 ## Intended Use
 <p align="justify">
-
-The dataset and model are primarily intended for **educational purposes** in the field of global optimisation of continuous, black-box objective functions limited by a finite evaluation budget.
+The dataset and model are primarily intended for <b>educational purposes</b> in the field of global optimisation of continuous, black-box objective functions limited by a finite evaluation budget.
 </p>
 
 ### Potential Use Cases
@@ -52,7 +51,9 @@ The datasets and optimisation methodology are **not intended** for:
 - Maintained existing $\xi$ values for remaining functions to preserve a balanced strategy.
 
 ## Performance
-Performance is evaluated using the **highest unnormalized observed output value** achieved across all evaluations.
+<p align="justify">
+Performance is evaluated using the <b>highest unnormalized observed output value</b> achieved across all evaluations.
+</p>
 
 <div align="center">
 
