@@ -17,6 +17,8 @@ The purpose of this dataset is to study and evaluate the performance of differen
 The dataset contains numerical input values provided to the optimisation algorithm(s) and their corresponding output values, obtained by evaluating the actual objective functions. Detailed information about the initial dataset provided for each of the eight black-box objective functions is presented in **Table 1** below.
 </p>
 
+<div align="center">
+
 ### Table 1: Initial Dataset
 
 | Function | Initial Input Data Dimensions (# evaluations × # features) | Initial Output Data Dimensions (# evaluations) | Input and Output Data Type | Input Space Range | Output Space Range | Format |
@@ -29,6 +31,8 @@ The dataset contains numerical input values provided to the optimisation algorit
 | 6 | 20 × 5 | 20 | Real numeric | [0, 1] | Varying | Floating with 6 digits of precision |
 | 7 | 30 × 6 | 30 | Real numeric | [0, 1] | Varying | Floating with 6 digits of precision |
 | 8 | 40 × 8 | 40 | Real numeric | [0, 1] | Varying | Floating with 6 digits of precision |
+
+</div>
 
 <p align="justify">
 The initial dataset contained no missing evaluations, and **13 additional evaluations** were performed for each function over the course of the Capstone Project.
@@ -59,6 +63,8 @@ No preprocessing was applied to the input data, as the input variables are well-
 Different transformations were applied to the output/target variables of each of the eight objective functions before the data was provided to the surrogate model. These transformations are summarised in **Table 2** below. The rationale for each transformation is provided in the individual **“Optimisation Strategy”** documentation for each function, which will be submitted at the end of the project.
 </p>
 
+<div align="center">
+
 ### Table 2: Target Variable Transformation
 
 | Function | Transformation |
@@ -71,6 +77,8 @@ Different transformations were applied to the output/target variables of each of
 | 6 | z-score standardisation |
 | 7 | $\hat{y}=log(y)$ |
 | 8 | z-score standardisation |
+
+</div>
 
 ### Intended Use of the Datasets
 <p align="justify">
