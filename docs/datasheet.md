@@ -46,7 +46,7 @@ No preprocessing was applied to the input data, as the input variables are well-
 Different transformations were applied to the output/target variables of each of the eight objective functions before the data was provided to the surrogate model. These transformations are summarised in **Table 2** below. The rationale for each transformation is provided in the individual **“Optimisation Strategy”** documentation for each function, which will be submitted at the end of the project.
 
 ### Table 2: Target Variable Transformation
-<center>
+
 | Function | Transformation |
 |:---:|:---:|
 | 1 | Rank/Copula |
@@ -57,7 +57,7 @@ Different transformations were applied to the output/target variables of each of
 | 6 | z-score standardisation |
 | 7 | $\hat{y}=log(y)$ |
 | 8 | z-score standardisation |
-<center>
+
 ### Intended Use of the Datasets
 
 The datasets included in this repository are intended for **educational and research purposes related to black-box optimisation**. They may also be used in conjunction with the source files for each objective function, which will be provided at the end of the project.
