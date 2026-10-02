@@ -27,7 +27,6 @@ Candidate query points are selected using an **Upper Confidence Bound (UCB)** ac
 </p>
 
 ## Performance Summary after 9 Rounds
-
 | Function | Initial Best Value | Current Best | Improvement |
 | :---: | :---: | :---: | :---: |
 | **Function 1** | $7.710875 \times 10^{-16}$ | $4.175390 \times 10^{-10}$ | $4.175382 \times 10^{-10}$ |
