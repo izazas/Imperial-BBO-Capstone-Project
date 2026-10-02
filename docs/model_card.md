@@ -23,19 +23,21 @@ The dataset and model are primarily intended for **educational purposes** in the
 </p>
 
 ### Potential Use Cases
+<div style="text-align: justify;">
 The datasets and associated optimisation approaches may be applicable to a range of problems, including:
 - **Machine Learning:** Hyperparameter and model configuration optimisation.
 - **Engineering:** Aerodynamic, structural, or mechanical design optimisation.
 - **Robotics:** Controller or policy parameter tuning.
 - **Chemical Processes:** Optimising process parameters or operating conditions.
+</div>
 
 ## Limitations and Excluded Applications
-
+<div style="text-align: justify;">
 The datasets and optimisation methodology are **not intended** for:
 1. **Safety-critical and real-time control applications:** Sequential optimisation may not satisfy stringent latency requirements.
 2. **Very large-scale optimisation:** The number of objective evaluations required by BBO may become impractical.
 3. **Categorical/Discontinuous inputs:** Optimising functions with discontinuities and/or categorical inputs.
-
+</div>
 
 ## Optimisation Strategy Evolution
 
@@ -48,12 +50,12 @@ The datasets and optimisation methodology are **not intended** for:
 
 
 ### Round 6: EDA, Transformation, and Strategy Upgrade
-
+<div style="text-align: justify;">
 - Conducted detailed Exploratory Data Analysis (EDA).
 - Scaled or transformed target variables for each function to improve surrogate predictions.
 - **Surrogate Model:** Changed to a Matérn 5/2 kernel with anisotropic length scales to account for non-smooth behaviour and varying rates of variation across dimensions.
 - **Acquisition Function:** Switched to Expected Improvement (EI) with $\xi = 0.01$, providing a controlled balance between exploration and exploitation.
-
+</div>
 
 ### Rounds 7–9: Targeted Exploitation
 
