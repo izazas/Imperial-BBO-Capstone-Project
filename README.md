@@ -36,6 +36,7 @@ Candidate query points are selected using an **Upper Confidence Bound (UCB)** ac
 | **Function 8** | $9.598482$ | $9.997061$ | $0.398579$ |
 
 ---
-Documentation
+## Documentation
 [Datasheet](docs/Datasheet.md)
+
 [Model Card](docs/model_card.md)
