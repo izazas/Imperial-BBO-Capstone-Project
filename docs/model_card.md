@@ -1,8 +1,6 @@
 # Model Card: Black-Box Bayesian Optimisation using Gaussian Processes
 
 ## Model Overview
-<div style="text-align: justify;">
-
 - **Model Name:** Black-Box Bayesian Optimisation using Gaussian Processes
 - **Type:** Bayesian optimisation using an Anisotropic Matérn 5/2 kernel for surrogate model and an Expected Improvement (EI) acquisition function.
 - **Task:** Maximise the output of eight unknown objective functions
@@ -17,66 +15,42 @@
   - Matplotlib `3.9.4`
   - `SEED = 42`
 
-</div>
-
 ## Intended Use
 <p align="justify">
 The dataset and model are primarily intended for **educational purposes** in the field of global optimisation of continuous, black-box objective functions limited by a finite evaluation budget.
 </p>
 
 ### Potential Use Cases
-<div style="text-align: justify;">
-
 The datasets and associated optimisation approaches may be applicable to a range of problems, including:
 - **Machine Learning:** Hyperparameter and model configuration optimisation.
 - **Engineering:** Aerodynamic, structural, or mechanical design optimisation.
 - **Robotics:** Controller or policy parameter tuning.
 - **Chemical Processes:** Optimising process parameters or operating conditions.
 
-</div>
-
 ## Limitations and Excluded Applications
-<div style="text-align: justify;">
-
 The datasets and optimisation methodology are **not intended** for:
 1. **Safety-critical and real-time control applications:** Sequential optimisation may not satisfy stringent latency requirements.
 2. **Very large-scale optimisation:** The number of objective evaluations required by BBO may become impractical.
 3. **Categorical/Discontinuous inputs:** Optimising functions with discontinuities and/or categorical inputs.
 
-</div>
-
 ## Optimisation Strategy Evolution
-
 ### Rounds 1–5: Initial Exploration & Strategy Shift
-<div style="text-align: justify;">
-
 - Employed a predominantly exploratory strategy for all eight objective functions.
 - **Surrogate Model:** Radial Basis Function (RBF) with isotropic length scales.
 - **Acquisition Function:** Upper Confidence Bound (UCB).
 - **Parameter Tuning:** The $\beta$ parameter was progressively reduced from $4.0$ to $2.5$ across rounds to gradually shift strategy towards greater exploitation of promising regions.
 
-</div>
-
 ### Round 6: EDA, Transformation, and Strategy Upgrade
-<div style="text-align: justify;">
-
 - Conducted detailed Exploratory Data Analysis (EDA).
 - Scaled or transformed target variables for each function to improve surrogate predictions.
 - **Surrogate Model:** Changed to a Matérn 5/2 kernel with anisotropic length scales to account for non-smooth behaviour and varying rates of variation across dimensions.
 - **Acquisition Function:** Switched to Expected Improvement (EI) with $\xi = 0.01$, providing a controlled balance between exploration and exploitation.
 
-</div>
-
 ### Rounds 7–9: Targeted Exploitation
-<div style="text-align: justify;">
-
 - The $\xi$ parameter was progressively reduced for selected objective functions to emphasize exploitation of highly promising regions.
 - Maintained existing $\xi$ values for remaining functions to preserve a balanced strategy.
 
-</div>
-
 ## Performance
-
 Performance is evaluated using the **highest unnormalized observed output value** achieved across all evaluations.
 
 <div align="center">
@@ -97,19 +71,13 @@ Performance is evaluated using the **highest unnormalized observed output value*
 </div>
 
 ## Assumptions and Limitations
-
 ### Assumptions
-<div style="text-align: justify;">
-
 - Objective functions are sufficiently smooth or locally predictable for the surrogate model to yield useful estimates from limited observations.
 - Bounded search space adequately represents the region of interest.
 - Observed evaluations provide reliable information regarding underlying functions.
 - Surrogate model and acquisition function accurately capture the trade-off between exploration and exploitation.
 
-</div>
-
 ### Limitations & Failure Modes
-<div style="text-align: justify;">
 
 - Poor surrogate predictions in sparsely sampled or highly non-smooth regions.
 - High sensitivity to kernel selection and hyperparameter choices.
@@ -117,24 +85,14 @@ Performance is evaluated using the **highest unnormalized observed output value*
 - Insufficient exploration when uncertainty is overemphasised.
 - Performance degradation on highly noisy, discontinuous, multimodal, or high-dimensional functions given limited evaluation budgets.
 
-</div>
-
 ## Reproducibility and Ethical Considerations
-
 ### Reproducibility
-<div style="text-align: justify;">
 
 - All predicted query points were generated with a fixed random seed (`seed=42`).
 - Environment specifications (library versions) are fully documented in the *Model Overview*.
 - *Note:* Reproducibility may still vary slightly based on platform-specific execution environments and underlying low-level numerical implementations.
 
-</div>
-
 ### Ethical Considerations
-
-<div style="text-align: justify;">
 
 - **Data Privacy & Bias:** The datasets consist exclusively of synthetic numerical data from black-box objective functions without personal, demographic, sensitive, or human-subject information. Algorithmic bias and privacy concerns are not directly applicable.
 - **Future Deployment:** Any application of this methodology to real-world decision systems involving human subjects will require comprehensive assessment regarding ethics, fairness, privacy, and safety.
-
-</div>
