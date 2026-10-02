@@ -19,10 +19,12 @@ Evaluations are conducted on a weekly submission schedule with the Imperial Coll
 3. **Data Integration:** The returned scalar outputs are added to each function's dataset to update surrogate predictions for subsequent rounds.
 
 ## Technical Approach
-
+<p align="justify">
 During the initial phase (Rounds 1–5), the optimization strategy prioritizes **exploration** across the feature space. The approach uses a **Gaussian Process (GP)** regression surrogate model with a **Radial Basis Function (RBF)** kernel to approximate each underlying objective function. 
-
+</p>
+<p align="justify">
 Candidate query points are selected using an **Upper Confidence Bound (UCB)** acquisition function with a high exploration parameter ($\beta$ / $k$). This design intentionally targets regions of high uncertainty to map the sample space effectively during early rounds. As the dataset grows, subsequent rounds will transition toward an **exploitation** strategy, focusing query selection on promising regions with high predicted output values.
+</p>
 
 ## Performance Summary after 9 Rounds
 
