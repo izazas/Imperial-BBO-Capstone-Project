@@ -64,6 +64,8 @@ The datasets and optimisation methodology are **not intended** for:
 
 Performance is evaluated using the **highest unnormalized observed output value** achieved across all evaluations.
 
+<div align="center">
+
 ### Table 1: Performance Summary after 9 Rounds
 
 | Function | Initial Best Value | Current Best | Improvement |
@@ -77,7 +79,7 @@ Performance is evaluated using the **highest unnormalized observed output value*
 | **Function 7** | $1.364968$ | $2.609268$ | $1.244300$ |
 | **Function 8** | $9.598482$ | $9.997061$ | $0.398579$ |
 
----
+</div>
 
 ## Assumptions and Limitations
 
