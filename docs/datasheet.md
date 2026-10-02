@@ -15,7 +15,7 @@ The dataset contains numerical input values provided to the optimisation algorit
 ### Table 1: Initial Dataset
 
 | Function | Initial Input Data Dimensions (# evaluations × # features) | Initial Output Data Dimensions (# evaluations) | Input and Output Data Type | Input Space Range | Output Space Range | Format |
-|---:|---:|---:|---|---|---|---|
+|:---:|:---:|:---:|---|---|---|---|
 | 1 | 10 × 2 | 10 | Real numeric | [0, 1] | Varying | Floating with 6 digits of precision |
 | 2 | 10 × 2 | 10 | Real numeric | [0, 1] | Varying | Floating with 6 digits of precision |
 | 3 | 15 × 3 | 15 | Real numeric | [0, 1] | Varying | Floating with 6 digits of precision |
