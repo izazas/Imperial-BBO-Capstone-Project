@@ -37,6 +37,5 @@ Candidate query points are selected using an **Upper Confidence Bound (UCB)** ac
 
 ---
 ## Documentation
-[Datasheet](docs/Datasheet.md)
-
+[Datasheet](docs/datasheet.md)
 [Model Card](docs/model_card.md)
