@@ -16,7 +16,6 @@
   - Matplotlib `3.9.4`
   - `SEED = 42`
 
----
 
 ## Intended Use
 
@@ -29,8 +28,6 @@ The datasets and associated optimisation approaches may be applicable to a range
 - **Robotics:** Controller or policy parameter tuning.
 - **Chemical Processes:** Optimising process parameters or operating conditions.
 
----
-
 ## Limitations and Excluded Applications
 
 The datasets and optimisation methodology are **not intended** for:
@@ -38,7 +35,6 @@ The datasets and optimisation methodology are **not intended** for:
 2. **Very large-scale optimisation:** The number of objective evaluations required by BBO may become impractical.
 3. **Categorical/Discontinuous inputs:** Optimising functions with discontinuities and/or categorical inputs.
 
----
 
 ## Optimisation Strategy Evolution
 
@@ -58,7 +54,6 @@ The datasets and optimisation methodology are **not intended** for:
 - The $\xi$ parameter was progressively reduced for selected objective functions to emphasize exploitation of highly promising regions.
 - Maintained existing $\xi$ values for remaining functions to preserve a balanced strategy.
 
----
 
 ## Performance
 
@@ -96,7 +91,6 @@ Performance is evaluated using the **highest unnormalized observed output value*
 - Insufficient exploration when uncertainty is overemphasised.
 - Performance degradation on highly noisy, discontinuous, multimodal, or high-dimensional functions given limited evaluation budgets.
 
----
 
 ## Reproducibility and Ethical Considerations
 
