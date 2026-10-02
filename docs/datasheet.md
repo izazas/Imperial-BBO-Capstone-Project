@@ -16,9 +16,10 @@ The purpose of this dataset is to study and evaluate the performance of differen
 <p align="justify">
 The dataset contains numerical input values provided to the optimisation algorithm(s) and their corresponding output values, obtained by evaluating the actual objective functions. Detailed information about the initial dataset provided for each of the eight black-box objective functions is presented in **Table 1** below.
 </p>
+<p align="centre">
 
 ### Table 1: Initial Dataset
-
+</p>
 | Function | Initial Input Data Dimensions (# evaluations × # features) | Initial Output Data Dimensions (# evaluations) | Input and Output Data Type | Input Space Range | Output Space Range | Format |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | 1 | 10 × 2 | 10 | Real numeric | [0, 1] | Varying | Floating with 6 digits of precision |
@@ -37,20 +38,25 @@ The initial dataset contained no missing evaluations, and **13 additional evalua
 ## 3. Collection Process
 <p align="justify">
 The initial dataset for each of the eight unknown objective functions was provided by the academic team at Imperial College London and contains a specific number of input–output observations, as shown in Table 1.
-
+</p>
+<p align="justify">
 A surrogate model, in this case a **Gaussian Process (GP)**, is used to approximate the unknown objective function based on the available dataset. The surrogate model provides an estimate of the objective function output (mean) together with an associated measure of uncertainty (variance) across the input space.
-
+</p>
+<p align="justify">
 An acquisition function, such as **Expected Improvement (EI)** or **Upper Confidence Bound (UCB)**, then uses the information provided by the surrogate model to identify the next query point to be evaluated. This query point is submitted to the Imperial College London academic team, who evaluate the corresponding objective function and return the true output.
-
+</p>
+<p align="justify">
 The newly evaluated input–output pair is then added to the dataset for the respective function, thereby expanding the available data for subsequent optimisation iterations. This process is repeated for a total of **13 evaluations**, with one query submission and corresponding evaluation performed each week, representing the maximum available evaluation budget.
-
+</p>
+<p align="justify">
 Details of the surrogate model and acquisition function used for each of the eight objective functions are provided in the individual **“Optimisation Strategy”** documentation, which will be supplied at the end of the project.
 </p>
 
 ## 4. Preprocessing and Intended Use of the Data
 <p align="justify">
 No preprocessing was applied to the input data, as the input variables are well-defined real numerical values within the range **[0, 1]**.
-
+</p>
+<p align="justify">
 Different transformations were applied to the output/target variables of each of the eight objective functions before the data was provided to the surrogate model. These transformations are summarised in **Table 2** below. The rationale for each transformation is provided in the individual **“Optimisation Strategy”** documentation for each function, which will be submitted at the end of the project.
 </p>
 
