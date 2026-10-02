@@ -6,24 +6,26 @@ This repository tracks progress on a Black-Box Optimisation (BBO) project aimed 
 </p>
 
 ## Problem Specification
+<p align="justify">
 * **Objective Functions:** 8 continuous black-box functions (varying from 2D to 8D).
 * **Input Domain:** All continuous numeric input features are bounded within $[0, 1]$.
 * **Optimization Goal:** Maximize the true scalar output for each function under a fixed evaluation budget.
-
+</p>
 ## Weekly Evaluation Workflow
+<p align="justify">
 Evaluations are conducted on a weekly submission schedule with the Imperial College support team:
 
 1. **Query Selection:** Candidate points are generated using our Bayesian optimization strategy.
 2. **Submission Format:** Coordinates are submitted as dash-delimited strings matching the function's dimensionality.
    * *Example (3D Function):* `0.123456-0.654321-0.345678`
 3. **Data Integration:** The returned scalar outputs are added to each function's dataset to update surrogate predictions for subsequent rounds.
-
+</p>
 ## Technical Approach
-
+<p align="justify">
 During the initial phase (Rounds 1–5), the optimization strategy prioritizes **exploration** across the feature space. The approach uses a **Gaussian Process (GP)** regression surrogate model with a **Radial Basis Function (RBF)** kernel to approximate each underlying objective function. 
 
 Candidate query points are selected using an **Upper Confidence Bound (UCB)** acquisition function with a high exploration parameter ($\beta$ / $k$). This design intentionally targets regions of high uncertainty to map the sample space effectively during early rounds. As the dataset grows, subsequent rounds will transition toward an **exploitation** strategy, focusing query selection on promising regions with high predicted output values.
-
+</p>
 ## Performance Summary after 9 Rounds
 
 | Function | Initial Best Value | Current Best | Improvement |
