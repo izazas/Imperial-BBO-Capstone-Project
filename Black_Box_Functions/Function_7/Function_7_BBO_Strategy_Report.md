@@ -6,7 +6,7 @@ The week-13 query is taken to be candidate E of the week-13 analysis, (0, 0.1813
 
 ## Progress through the rounds
 
-![Function 7 progress by week](Function_7_Report_figures/fig1_progress_by_week.png)
+![Function 7 progress by week](Function_7_Report_Figures/fig1_progress_by_week.png)
 
 *Figure 1. Left: each weekly result and the best value so far; shading is the modelling regime. Right: where the queries went in x1 and x2, zoomed on the final region; the star is the final query.*
 
@@ -37,7 +37,7 @@ Weeks 1 to 6 were learning rounds: RBF with a length-scale per input in weeks 1 
 
 The week-7 notebook models `g = log(y)`: y is strictly positive, spans almost three orders of magnitude, and is heavily right-skewed. A Shapiro-Wilk test [4] supports it (raw y W = 0.726, p < 0.0001; log(y) W = 0.949, p = 0.10; later weeks p = 0.07, 0.05 and 0.04). The log is monotone, so the maximiser is unchanged, and `normalize_y` standardises it for the GP.
 
-![The target on three scales](Function_7_report_figures/fig2_target_distribution.png)
+![The target on three scales](Function_7_Report_Figures/fig2_target_distribution.png)
 
 *Figure 2. The target on the raw, square-root and log scales (43 evaluations; the magenta tick is the final query).*
 
@@ -54,7 +54,7 @@ In week 11 the choice was tested rather than assumed, with three transforms by t
 
 The sqrt scale was best overall and the log scale best on the points that matter. Neither dominated, so from week 11 the choice became an ensemble of all six models rather than a single transform. The raw-ARD fit also pushed two length-scales to the bound of 100, a sign the raw scale is a poor description.
 
-![Surrogate quality](Function_7_report_figures/fig3_surrogate_quality.png)
+![Surrogate quality](Function_7_Report_Figures/fig3_surrogate_quality.png)
 
 *Figure 3. Left: leave-one-out error of the log-ARD GP, weeks 7 to 10. Right: the six models of week 11.*
 
@@ -62,7 +62,7 @@ The sqrt scale was best overall and the log scale best on the points that matter
 
 The strategy moved from exploration to exploitation. Weeks 1 to 9 mixed local steps with far probes (weeks 3, 5 and 7 to 9, up to 0.86 from the best point). From week 10 the steps shrank from 0.09 to 0.005, and the last queries only refined the best point.
 
-![How each week's query moved from the best point so far](Function_7_report_figures/fig4_strategy_evolution.png)
+![How each week's query moved from the best point so far](Function_7_report_Figures/fig4_strategy_evolution.png)
 
 *Figure 4. Distance of each week's query from the best point so far. Weeks 1 to 9 include large moves (0.2 to 0.9); from week 10 every step is 0.09 or less.*
 
