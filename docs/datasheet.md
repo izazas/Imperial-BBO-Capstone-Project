@@ -58,7 +58,7 @@ The newly evaluated input–output pair is then added to the dataset for the res
 </p>
 
 <p align="justify">
-Details of the surrogate model and acquisition function used for each of the eight objective functions are provided in the individual <b>“Optimisation Strategy”</b> documentation, which will be supplied at the end of the project.
+Details of the surrogate model and acquisition function used for each of the eight objective functions are provided in the individual <b>“Function_X_BBO_Stratey_Report”</b> documentation, which is located at each function's parent directory.
 
 </p>
 
@@ -68,7 +68,7 @@ No preprocessing was applied to the input data, as the input variables are well-
 </p>
 
 <p align="justify">
-Different transformations were applied to the output/target variables of each of the eight objective functions before the data was provided to the surrogate model. These transformations are summarised in <b>Table 2</b> below. The rationale for each transformation is provided in the individual <b>“Optimisation Strategy”</b> documentation for each function, which will be submitted at the end of the project.
+Different transformations were applied to the output/target variables of each of the eight objective functions before the data was provided to the surrogate model. These transformations are summarised in <b>Table 2</b> below. The rationale for each transformation is provided in the individual <b>“Function_X_BBO_Stratey_Report”</b> documentation, which is located at each function's parent directory.
 </p>
 
 <div align="center">
@@ -77,7 +77,7 @@ Different transformations were applied to the output/target variables of each of
 
 | Function | Transformation |
 |:---:|:---:|
-| 1 | Rank/Copula |
+| 1 | Rank/Copula - signed $log_{10}(y)$ |
 | 2 | z-score standardisation |
 | 3 |  $\hat{y}=-log(-y)$ |
 | 4 | z-score standardisation |

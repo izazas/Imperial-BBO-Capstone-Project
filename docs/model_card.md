@@ -8,11 +8,11 @@
 - **Developer:** Ilias Zazas
 - **License:** Academic use
 - **Software and Libraries:**
-  - Python `3.9.13`
-  - NumPy `1.26.4`
-  - SciPy `1.13.1`
-  - scikit-learn `1.6.1`
-  - Matplotlib `3.9.4`
+  - Python `3.13.9`
+  - NumPy `2.3.5`
+  - SciPy `1.16.3`
+  - scikit-learn `1.9.0`
+  - Matplotlib `3.11.1`
   - `SEED = 42`
 
 ## Intended Use
@@ -34,21 +34,24 @@ The datasets and optimisation methodology are **not intended** for:
 3. **Categorical/Discontinuous inputs:** Optimising functions with discontinuities and/or categorical inputs.
 
 ## Optimisation Strategy Evolution
-### Rounds 1–5: Initial Exploration & Strategy Shift
-- Employed a predominantly exploratory strategy for all eight objective functions.
-- **Surrogate Model:** Radial Basis Function (RBF) with isotropic length scales.
-- **Acquisition Function:** Upper Confidence Bound (UCB).
-- **Parameter Tuning:** The $\beta$ parameter was progressively reduced from $4.0$ to $2.5$ across rounds to gradually shift strategy towards greater exploitation of promising regions.
 
-### Round 6: EDA, Transformation, and Strategy Upgrade
-- Conducted detailed Exploratory Data Analysis (EDA).
-- Scaled or transformed target variables for each function to improve surrogate predictions.
-- **Surrogate Model:** Changed to a Matérn 5/2 kernel with anisotropic length scales to account for non-smooth behaviour and varying rates of variation across dimensions.
-- **Acquisition Function:** Switched to Expected Improvement (EI) with $\xi = 0.01$, providing a controlled balance between exploration and exploitation.
-
-### Rounds 7–9: Targeted Exploitation
-- The $\xi$ parameter was progressively reduced for selected objective functions to emphasize exploitation of highly promising regions.
-- Maintained existing $\xi$ values for remaining functions to preserve a balanced strategy.
+### Weeks 1 to 6: learning rounds
+-	RBF ARD kernels in weeks 1 to 3, then an isotropic Matérn kernel.
+-	No noise term, and mostly no random seed.
+-	UCB, LCB and EI settings changed by hand.
+- The results were uneven and not reproducible.
+### Week 7: the main rebuild. The notebooks were rewritten around a more careful and stractured format:
+-	a noise term added;
+-	a target transform chosen from the data;
+-	ARD against isotropic kernels chosen by marginal likelihood or leave-one-out (LOO) density;
+-	Fixed seeds, so weeks 7 to 13 can be re-run.
+### Weeks 8 to 10: calibration and local search.
+-	Started checking the model against what it actually predicted by using LOO on the queried points and comparing last week’s prediction with the outcome.
+-	I added trust regions and cross-check models: an additive quadratic for F6, a slab regression for F4 and a local bowl for F3.
+-	Made the acquisition more exploitative ($\xi$ 0.01 down to 0.005, 0.002 or 0.0001).
+### Weeks 11 to 13: ensembles and structure tests.
+-	Several models were compared, and queries were scored by consensus (F7, F8) or by single-variable steps.
+-	Checked whether the function had a simple exact form (F8).
 
 ## Performance
 <p align="justify">
@@ -57,18 +60,18 @@ Performance is evaluated using the <b>highest unnormalized observed output value
 
 <div align="center">
 
-### Table 1: Performance Summary after 9 Rounds
+### Table 1: Performance Summary after all 13 Rounds
 
-| Function | Initial Best Value | Current Best | Improvement |
+| Function | Initial Best Value | Final Best | Improvement |
 | :---: | :---: | :---: | :---: |
-| **Function 1** | $7.710875 \times 10^{-16}$ | $4.175390 \times 10^{-10}$ | $4.175382 \times 10^{-10}$ |
+| **Function 1** | $7.710875 \times 10^{-16}$ | $1.9634$ | $1.96339$ |
 | **Function 2** | $0.611205$ | $0.695095$ | $0.083890$ |
-| **Function 3** | $-0.034835$ | $-0.008171$ | $0.026664$ |
-| **Function 4** | $-4.025542$ | $0.615944$ | $4.641486$ |
-| **Function 5** | $1088.859618$ | $8449.496898$ | $7360.637279$ |
-| **Function 6** | $-0.714265$ | $-0.404822$ | $0.309443$ |
-| **Function 7** | $1.364968$ | $2.609268$ | $1.244300$ |
-| **Function 8** | $9.598482$ | $9.997061$ | $0.398579$ |
+| **Function 3** | $-0.034835$ | $-0.002265$ | $0.032569$ |
+| **Function 4** | $-4.025542$ | $0.6555$ | $4.681042$ |
+| **Function 5** | $1088.859618$ | $8662.48$ | $7573.620381$ |
+| **Function 6** | $-0.714265$ | $-0.2513$ | $0.462965$ |
+| **Function 7** | $1.364968$ | $2.7833$ | $1.418332$ |
+| **Function 8** | $9.598482$ | $10.0000$ | $0.401518$ |
 
 </div>
 
@@ -90,9 +93,9 @@ Performance is evaluated using the <b>highest unnormalized observed output value
 ## Reproducibility and Ethical Considerations
 ### Reproducibility
 
-- All predicted query points were generated with a fixed random seed (`seed=42`).
+- Weeks 1 to 6 are not reproducible as I did not use a fixed seed. Weeks 7 to 13 are reproducible (seed 42).
 - Environment specifications (library versions) are fully documented in the *Model Overview*.
-- *Note:* Reproducibility may still vary slightly based on platform-specific execution environments and underlying low-level numerical implementations.
+- **Note:** Reproducibility may still vary slightly based on platform-specific execution environments and underlying low-level numerical implementations.
 
 ### Ethical Considerations
 
