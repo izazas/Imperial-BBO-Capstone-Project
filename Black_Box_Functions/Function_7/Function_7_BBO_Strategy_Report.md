@@ -6,7 +6,7 @@ The week-13 query is taken to be candidate E of the week-13 analysis, (0, 0.1813
 
 ## Progress through the rounds
 
-![Function 7 progress by week](Function_7_report_figures/fig1_progress_by_week.png)
+![Function 7 progress by week](Function_7_Report_figures/fig1_progress_by_week.png)
 
 *Figure 1. Left: each weekly result and the best value so far; shading is the modelling regime. Right: where the queries went in x1 and x2, zoomed on the final region; the star is the final query.*
 
