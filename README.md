@@ -20,11 +20,16 @@ Evaluations are conducted on a weekly submission schedule with the Imperial Coll
 
 ## Technical Approach
 <p align="justify">
-During the initial phase (Rounds 1–5), the optimization strategy prioritizes <b>exploration</b> across the feature space. The approach uses a <b>Gaussian Process (GP)</b> regression surrogate model with a <b>Radial Basis Function (RBF)</b> kernel to approximate each underlying objective function. 
+The first six weeks were exploratory, using <b>RBF</b> and then <b>Matérn</b> kernels with hand-tuned <b>UCB</b>, <b>LCB</b> and <b>EI</b> acquisition functions and no fixed seeds. Some queries performed well, such as F4’s first query (0.58) and F8’s 9.987, but none of the results could be reproduced. Week 7 rebuilt the approach: a noise term, kernel selection by marginal likelihood or leave-one-out, fixed seeds, and data-driven transforms (log for F1, F5 and F7; standardisation for F6 and F8). Weeks 8–10 added calibration and trust regions because the GPs over-predicted away from the best point; in F8, for example, weeks 7–10 were predicted above 10 but returned only 9.96–9.98.
+</p>
+<p align="justify">
+In weeks 11–13 the question changed from “where is the model’s maximum?” to “which model best predicts the top points?” This led to ensembles in F5, F7 and F8, single-variable steps in F6, and structural fits in F8. Once the best value in a function was settled, the remaining queries were used to gather information. Assuming the score is the best value observed, a lower-returning probe carries no penalty. F5’s week-13 query, for instance, repeated the corner point to confirm its exact value.
+</p>
+<!-- During the initial phase (Rounds 1–6), the optimization strategy prioritizes <b>exploration</b> across the feature space. The approach uses a <b>Gaussian Process (GP)</b> regression surrogate model with a <b>Radial Basis Function (RBF)</b> kernel to approximate each underlying objective function. 
 </p>
 <p align="justify">
 Candidate query points are selected using an <b>Upper Confidence Bound (UCB)</b> acquisition function with a high exploration parameter ($\beta$ / $k$). This design intentionally targets regions of high uncertainty to map the sample space effectively during early rounds. As the dataset grows, subsequent rounds will transition toward an <b>exploitation</b> strategy, focusing query selection on promising regions with high predicted output values.
-</p>
+</p> -->
 
 ## Performance Summary after 9 Rounds
 <div align="center">
@@ -45,4 +50,12 @@ Candidate query points are selected using an <b>Upper Confidence Bound (UCB)</b>
 
 ## Documentation
 [Datasheet](docs/datasheet.md)<br>
-[Model Card](docs/model_card.md)
+[Model Card](docs/model_card.md)<br>
+[Function 1 BBO Strategy Report](Black_Box_Functions/Function_1/Function_1_BBO_Strategy_Report.md)<br>
+[Function 2 BBO Strategy Report](Black_Box_Functions/Function_2/Function_2_BBO_Strategy_Report.md)<br>
+[Function 3 BBO Strategy Report](Black_Box_Functions/Function_3/Function_3_BBO_Strategy_Report.md)<br>
+[Function 4 BBO Strategy Report](Black_Box_Functions/Function_4/Function_4_BBO_Strategy_Report.md)<br>
+[Function 5 BBO Strategy Report](Black_Box_Functions/Function_5/Function_5_BBO_Strategy_Report.md)<br>
+[Function 6 BBO Strategy Report](Black_Box_Functions/Function_6/Function_6_BBO_Strategy_Report.md)<br>
+[Function 7 BBO Strategy Report](Black_Box_Functions/Function_7/Function_7_BBO_Strategy_Report.md)<br>
+[Function 8 BBO Strategy Report](Black_Box_Functions/Function_8/Function_8_BBO_Strategy_Report.md)
