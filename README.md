@@ -30,16 +30,16 @@ Candidate query points are selected using an <b>Upper Confidence Bound (UCB)</b>
 <div align="center">
 
 ### Performance Summary Table
-| Function | Initial Best Value | Current Best | Improvement |
+| Function | Initial Best Value | Final Best | Improvement |
 | :---: | :---: | :---: | :---: |
-| **Function 1** | $7.710875 \times 10^{-16}$ | $4.175390 \times 10^{-10}$ | $4.175382 \times 10^{-10}$ |
+| **Function 1** | $7.710875 \times 10^{-16}$ | $1.9634$ | $1.96339$ |
 | **Function 2** | $0.611205$ | $0.695095$ | $0.083890$ |
-| **Function 3** | $-0.034835$ | $-0.008171$ | $0.026664$ |
-| **Function 4** | $-4.025542$ | $0.615944$ | $4.641486$ |
-| **Function 5** | $1088.859618$ | $8449.496898$ | $7360.637279$ |
-| **Function 6** | $-0.714265$ | $-0.404822$ | $0.309443$ |
-| **Function 7** | $1.364968$ | $2.609268$ | $1.244300$ |
-| **Function 8** | $9.598482$ | $9.997061$ | $0.398579$ |
+| **Function 3** | $-0.034835$ | $-0.002265$ | $0.032569$ |
+| **Function 4** | $-4.025542$ | $0.6555$ | $4.681042$ |
+| **Function 5** | $1088.859618$ | $8662.48$ | $7573.620381$ |
+| **Function 6** | $-0.714265$ | $-0.2513$ | $0.462965$ |
+| **Function 7** | $1.364968$ | $2.7833$ | $1.418332$ |
+| **Function 8** | $9.598482$ | $10.0000$ | $0.401518$ |
 
 </div>
 
