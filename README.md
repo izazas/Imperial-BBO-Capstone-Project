@@ -76,10 +76,10 @@ The repository has two parts:
    - *datasheet.md* describes the data.
    - *model_card.md* describes the optimisation approach.
 - `Black_Box_Functions/` holds one self-contained folder per function. Each folder has the same four parts:
-   1. Strategy report: one Function_n_BBO_Strategy_Report.md per function. It covers the week-by-week strategy, why it changed and the final result.
-   2. Weekly notebooks: 13 notebooks, Fn_Week_01 to Fn_Week_13_Final. Each one is the code that fitted the surrogate and chose that week’s query. Weeks 1 to 6 are exploratory and not reproducible, because no seed was fixed. Weeks 7 to 13 are reproducible.
-   3. Data: 13 Week_n_Data folders of NumPy arrays, inputs.npy and outputs.npy. Each folder is the cumulative dataset at that week, so Week 1 is the initial design and Week 13 is the full history. That makes 208 .npy files (8 functions × 13 weeks × 2).
-   4. Report figures: the PNG charts used in the report, such as progress by week and strategy evolution.
+   1. Strategy report: one `Function_n_BBO_Strategy_Report.md` per function. It covers the week-by-week strategy, why it changed and the final result.
+   2. Weekly notebooks: 13 notebooks, `Fn_Week_01` to `Fn_Week_13_Final`. Each one is the code that fitted the surrogate and chose that week’s query. Weeks 1 to 6 are exploratory and not reproducible, because no seed was fixed. Weeks 7 to 13 are reproducible.
+   3. Data: 13 `Week_n_Data` folders of NumPy arrays, `inputs.npy` and `outputs.npy`. Each folder is the cumulative dataset at that week, so Week 1 is the initial design and Week 13 is the full history. That makes 208 .npy files (8 functions × 13 weeks × 2).
+   4. Report figures: the `PNG` charts used in the report, such as progress by week and strategy evolution.
 
 The structure follows the workflow. The data arrays are the inputs, the notebooks are the process and the reports and figures are the interpretation. Weekly folders make it possible to replay any week’s surrogate model on exactly the data that existed at the time.
 
