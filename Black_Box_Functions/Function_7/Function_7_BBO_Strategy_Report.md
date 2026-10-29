@@ -62,7 +62,7 @@ The sqrt scale was best overall and the log scale best on the points that matter
 
 The strategy moved from exploration to exploitation. Weeks 1 to 9 mixed local steps with far probes (weeks 3, 5 and 7 to 9, up to 0.86 from the best point). From week 10 the steps shrank from 0.09 to 0.005, and the last queries only refined the best point.
 
-![How each week's query moved from the best point so far](Function_7_report_Figures/fig4_strategy_evolution.png)
+![How each week's query moved from the best point so far](Function_7_Report_Figures/fig4_strategy_evolution.png)
 
 *Figure 4. Distance of each week's query from the best point so far. Weeks 1 to 9 include large moves (0.2 to 0.9); from week 10 every step is 0.09 or less.*
 
