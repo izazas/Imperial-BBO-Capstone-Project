@@ -5,7 +5,7 @@
 This repository documents a Black-Box Optimisation (BBO) capstone project for Imperial College. The task was to maximise eight unknown functions, with 2 to 8 inputs each, all bounded to [0, 1]. Only one query per function was allowed each week, over 13 weeks. 
 </p>
 
-## Non-Technical Explanation of the Project
+## Project Objective
 <p align="justify">
 This project tackled eight “black-box” puzzles: hidden mathematical functions, each with between two and eight input settings, whose inner workings were unknown. The goal was to find the settings that give the highest output while testing only one point per function each week. After each result came back, I updated a statistical model that estimated where good values were likely to lie and how confident it was. I then chose the next test point to balance exploring new regions against refining promising ones. Every function beat its starting best. Function 5 rose from about 1,089 to 8,662, Function 4 went from negative to positive, and Function 8 reached 10.0.
 </p>
