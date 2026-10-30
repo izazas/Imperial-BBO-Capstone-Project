@@ -90,7 +90,7 @@ Different transformations were applied to the output/target variables of each of
 
 ### Intended Use of the Datasets
 <p align="justify">
-The datasets included in this repository are intended for <b>educational and research purposes related to black-box optimisation</b>. They may also be used in conjunction with the source files for each objective function, which will be provided at the end of the project.
+The datasets included in this repository are intended for <b>educational and research purposes related to black-box optimisation</b>. They may also be used in conjunction with the source files for each objective function.
 </p>
 
 ### Inappropriate Use of the Datasets
@@ -102,7 +102,7 @@ As the datasets for each objective function were generated using functions that 
 
 ### Data Availability
 <p align="justify">
-The data for each of the eight objective functions is available in the corresponding <b>“Data”</b> folder within this repository. The complete datasets will be included by the end of the project.
+The data for each of the eight objective functions is available in the corresponding <b>“Data”</b> folder within this repository.
 </p>
 
 ### Licensing and Terms of Use
